@@ -1,0 +1,19 @@
+{
+  "name": "orl11110",
+  "version": "1.0.0",
+  "description": "- 👋 Hi, I’m @Orl11110\r - 👀 I’m interested in ...\r - 🌱 I’m currently learning ...\r - 💞️ I’m looking to collaborate on ...\r - 📫 How to reach me ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orl11110/Orl11110.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Orl11110/Orl11110/issues"
+  },
+  "homepage": "https://github.com/Orl11110/Orl11110#readme"
+}
