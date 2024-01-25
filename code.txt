@@ -1,0 +1,95 @@
+Code for Sales Tax.
+To avoid misunderstanding, I understood the formula as this:
+(Sales Tax Rate) x (amount) = (Sales Tax)
+
+public class Main{
+	public static void main(String[] args){
+// We can use the factory design pattern to choose the instantiated class.
+
+		State minesota = new MN();
+		Tax minesotaTax= new Tax(minesota);
+		System.out.println(minesotaTax.computeTax(10));
+		
+		State california= new CA();
+		Tax californiaTax= new Tax(california);
+		System.out.println(californiaTax.computeTax(10));		
+
+		State newYork= new NY();
+		Tax newYorkTax = new Tax(newYork);
+		System.out.println(newYorkTax.computeTax(10));
+		
+		State newMexico = new NM();
+		Tax newMexicoTax = new Tax(newMexico);
+		System.out.println(newMexicoTax.computeTax(10));
+		
+		State texas= new TX();
+		Tax texasTax = new Tax(texas);
+		System.out.println(texasTax.computeTax(10));		
+	}
+}
+
+
+
+
+
+class Tax{
+	private State state;
+
+	public Tax(State state){
+		this.state = state;
+	}
+	
+	public Double computeTax(double amount){
+		return state.salesTax(amount);
+	}
+}
+
+
+interface State{
+	Double salesTax(double amount);
+}
+
+class MN implements State{
+	private Double rate = 0.0678;
+
+	@Override
+	public Double salesTax(double amount){
+		return rate * amount;
+	}
+}
+
+class CA implements State{
+	private Double rate = 0.065;
+
+	@Override
+	public Double salesTax(double amount){
+		return rate * amount;
+	}
+}
+
+class NY implements State{
+	private Double rate = 0.04;
+
+	@Override
+	public Double salesTax(double amount){
+		return rate * amount;
+	}
+}
+
+class NM implements State{
+	private Double rate = 0.05125;
+
+	@Override
+	public Double salesTax(double amount){
+		return rate * amount;
+	}
+}
+
+class TX implements State{
+	private Double rate = 0.0625;
+
+	@Override
+	public Double salesTax(double amount){
+		return rate * amount;
+	}
+}
